@@ -1,0 +1,10 @@
+sudo:
+  - required
+
+services:
+  - docker
+
+script:
+  - make
+  - docker run --rm -v $(PWD):/output incnlo ./inclnll incnlo/working/param.dat
+  - ls -ltr
