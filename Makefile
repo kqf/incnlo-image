@@ -6,7 +6,7 @@ all: Dockerfile incnlo
 
 incnlo:
 	curl -O https://lapth.cnrs.fr/PHOX_FAMILY/src_inc/inc1_4.tar.gz
-	tar xzvf inc1_4.tar.gz
+	tar xzf inc1_4.tar.gz
 	rm inc1_4.tar.gz
 
 	@# Move it to version agnostic folder
