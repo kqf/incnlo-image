@@ -6,5 +6,15 @@ services:
 
 script:
   - make
-  - docker run --rm -v $TRAVIS_BUILD_DIR:/output incnlo ./inclnll incnlo/working/param.dat
-  - ls -ltr
+  - docker run --rm akqf/incnlo ./inclnll incnlo/working/param.dat
+  - rm -rf incnlo
+
+deploy:
+  provider: script
+  script:
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - docker push akqf/incnlo
+
+  on:
+    tags: true
+    all_branches: true

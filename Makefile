@@ -2,7 +2,7 @@
 
 
 all: Dockerfile incnlo
-	docker build -t incnlo .
+	docker build -t akqf/incnlo .
 
 incnlo:
 	curl -O https://lapth.cnrs.fr/PHOX_FAMILY/src_inc/inc1_4.tar.gz
