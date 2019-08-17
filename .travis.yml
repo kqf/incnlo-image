@@ -4,6 +4,9 @@ sudo:
 services:
   - docker
 
+before_script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
 script:
   - make
   - docker run --rm akqf/incnlo ./inclnll incnlo/working/param.dat
@@ -12,9 +15,7 @@ script:
 deploy:
   provider: script
   script:
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     - docker push akqf/incnlo
-
   on:
     tags: true
     all_branches: true
