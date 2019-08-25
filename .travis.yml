@@ -9,7 +9,7 @@ before_script:
 
 script:
   - make
-  - docker run --rm akqf/incnlo ./inclnll incnlo/working/param.dat
+  - docker run --rm -v $TRAVIS_BUILD_DIR/incnlo/working:/output/ akqf/incnlo inclnll
   - rm -rf incnlo
 
 deploy:
