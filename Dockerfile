@@ -11,6 +11,9 @@ WORKDIR incnlo
 RUN make -f Makefile_home
 RUN make working
 
-WORKDIR /incnlo/working/
+RUN mkdir bin/
+RUN mv working/inclnll bin/
+ENV PATH="/incnlo/bin:${PATH}"
+
 RUN mkdir -p /output
-RUN ls
+WORKDIR /output
