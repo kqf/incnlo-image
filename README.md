@@ -7,5 +7,5 @@ The base image for direct photon and inclusive hadron production estimation soft
 Put the configuration file in the desired directory, set the first parameter in `param.dat` to `/output/` and then run
 
 ```
-docker run --rm -v ${PWD}:/output akqf/incnlo inclnll
+docker run --rm -v ${PWD}:/output akqf/incnlo
 ```

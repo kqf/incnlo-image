@@ -17,3 +17,5 @@ ENV PATH="/incnlo/bin:${PATH}"
 
 RUN mkdir -p /output
 WORKDIR /output
+
+CMD ["inclnll"]
